@@ -40,6 +40,9 @@ class AppController {
     // Process flow step interactive highlighting
     this.setupProcessFlow();
     
+    // Magnetic Button Interactions
+    this.setupMagneticButtons();
+    
     // Load lucide icons
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
@@ -234,19 +237,90 @@ class AppController {
   }
   
   setupProcessFlow() {
-    const steps = document.querySelectorAll('.process-step');
-    steps.forEach((step, index) => {
-      step.classList.add('glass-card-hoverable');
-      step.style.cursor = 'pointer';
+    const stepRows = document.querySelectorAll('.process-step-row');
+    const visualStates = document.querySelectorAll('.visual-state');
+    const progressFill = document.querySelector('.process-line-progress');
+    const stepsListContainer = document.querySelector('.process-steps-list');
+    
+    if (!stepRows.length || !visualStates.length) return;
+    
+    // Set active step helper
+    const activateStep = (stepNum) => {
+      stepRows.forEach(row => {
+        if (row.getAttribute('data-step') === stepNum) {
+          row.classList.add('active');
+        } else {
+          row.classList.remove('active');
+        }
+      });
       
-      step.addEventListener('click', () => {
-        step.style.transform = 'scale(1.05)';
-        step.style.borderColor = 'var(--accent-gold)';
+      visualStates.forEach(state => {
+        if (state.getAttribute('data-step') === stepNum) {
+          state.classList.add('active');
+        } else {
+          state.classList.remove('active');
+        }
+      });
+      
+      // Update line progress
+      if (progressFill && stepsListContainer) {
+        const totalSteps = stepRows.length;
+        const currentActiveIndex = Array.from(stepRows).findIndex(r => r.classList.contains('active'));
+        const percentage = ((currentActiveIndex + 1) / totalSteps) * 100;
+        progressFill.style.height = `${percentage}%`;
+      }
+    };
+    
+    // Click behavior
+    stepRows.forEach(row => {
+      const card = row.querySelector('.step-detail-card');
+      const stepNum = row.getAttribute('data-step');
+      
+      if (card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+          activateStep(stepNum);
+        });
+      }
+    });
+    
+    // Scroll intersection observer to auto-active steps
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -40% 0px',
+      threshold: 0.1
+    };
+    
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const stepNum = entry.target.getAttribute('data-step');
+          activateStep(stepNum);
+        }
+      });
+    }, observerOptions);
+    
+    stepRows.forEach(row => stepObserver.observe(row));
+  }
+
+  setupMagneticButtons() {
+    const isMobile = window.innerWidth <= 767;
+    if (isMobile) return;
+    
+    const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
+    buttons.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
         
-        setTimeout(() => {
-          step.style.transform = '';
-          step.style.borderColor = '';
-        }, 600);
+        btn.style.transform = `translate3d(${x * 0.3}px, ${y * 0.3}px, 0) scale(1.02)`;
+        btn.style.boxShadow = `0 15px 30px rgba(30, 79, 255, 0.45), 0 0 20px var(--accent-gold-glow)`;
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate3d(0, 0, 0) scale(1)';
+        btn.style.boxShadow = '';
       });
     });
   }
