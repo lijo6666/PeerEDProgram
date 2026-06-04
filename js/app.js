@@ -43,8 +43,6 @@ class AppController {
     // Magnetic Button Interactions
     this.setupMagneticButtons();
 
-    // Branded Intro Sequence
-    this.setupIntroOverlay();
     
     // Digital Stall Experience
     this.setupDigitalStall();
@@ -114,23 +112,36 @@ class AppController {
   }
   
   highlightNavLinks() {
-    let scrollPosition = window.scrollY + 120;
+    let scrollPosition = window.scrollY + 140;
     
-    this.sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
+    const targetIds = Array.from(this.navItems)
+      .map(item => item.querySelector('a')?.getAttribute('href')?.substring(1))
+      .filter(Boolean);
+      
+    let activeId = null;
+    
+    for (const id of targetIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+      
+      const top = el.offsetTop;
+      const height = el.offsetHeight;
       
       if (scrollPosition >= top && scrollPosition < top + height) {
-        this.navItems.forEach(item => {
-          item.classList.remove('active');
-          const link = item.querySelector('a');
-          if (link && link.getAttribute('href') === `#${id}`) {
-            item.classList.add('active');
-          }
-        });
+        activeId = id;
       }
-    });
+    }
+    
+    if (activeId) {
+      this.navItems.forEach(item => {
+        const link = item.querySelector('a');
+        if (link && link.getAttribute('href') === `#${activeId}`) {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
   }
 
   setupCursorGlow() {
@@ -334,59 +345,6 @@ class AppController {
     });
   }
 
-  setupIntroOverlay() {
-    const overlay = document.getElementById('intro-overlay');
-    if (!overlay) return;
-    
-    // Add scroll lock class to body
-    document.body.classList.add('intro-active');
-    
-    // Stage 3: Philosophies Staggered Words Reveal
-    const words = document.querySelectorAll('.intro-philosophies .p-word');
-    words.forEach((word, index) => {
-      setTimeout(() => {
-        word.classList.add('reveal');
-        // Add accent grow highlight class
-        word.classList.add('active-grow');
-        
-        // Remove grow highlight from previous word
-        if (index > 0) {
-          words[index - 1].classList.remove('active-grow');
-        }
-      }, 500 + index * 300); // Stagger every 300ms starting at 500ms
-    });
-    
-    // Stage 4: Logos merge and final tagline reveal
-    const finalRevealTime = 500 + words.length * 300 + 400;
-    setTimeout(() => {
-      // Remove grow highlight from last word
-      if (words.length > 0) {
-        words[words.length - 1].classList.remove('active-grow');
-      }
-      
-      // Hide philosophies and emblem, show final brand
-      const emblemContainer = document.querySelector('.intro-emblem-container');
-      const philosophiesContainer = document.querySelector('.intro-philosophies');
-      const finalBrand = document.querySelector('.intro-final-brand');
-      
-      if (emblemContainer) emblemContainer.style.opacity = '0';
-      if (philosophiesContainer) philosophiesContainer.style.opacity = '0';
-      
-      setTimeout(() => {
-        if (emblemContainer) emblemContainer.style.display = 'none';
-        if (philosophiesContainer) philosophiesContainer.style.display = 'none';
-        if (finalBrand) finalBrand.classList.add('reveal');
-      }, 400);
-      
-    }, finalRevealTime);
-    
-    // Stage 5: Fade-out intro overlay entirely
-    const fadeOutTime = finalRevealTime + 1100;
-    setTimeout(() => {
-      overlay.classList.add('fade-out');
-      document.body.classList.remove('intro-active');
-    }, fadeOutTime);
-  }
 
   setupDigitalStall() {
     const panels = document.querySelectorAll('.stall-panel');
