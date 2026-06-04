@@ -25,11 +25,17 @@ class AppController {
       this.highlightNavLinks();
     });
     
-    // Glass card lighting interaction
-    this.setupGlassLighting();
+    // Mouse Glow Orb Follower
+    this.setupCursorGlow();
+    
+    // Glass card lighting interaction & 3D Tilt
+    this.setupGlassInteractions();
     
     // Scroll entry animations (Intersection Observer)
     this.setupScrollReveal();
+    
+    // Statistics Count-Up
+    this.setupCountUp();
     
     // Process flow step interactive highlighting
     this.setupProcessFlow();
@@ -41,7 +47,6 @@ class AppController {
   }
   
   setupTheme() {
-    // Default to dark mode (empty class), check if light-mode stored
     const savedTheme = localStorage.getItem('theme');
     
     if (savedTheme === 'light') {
@@ -97,7 +102,7 @@ class AppController {
   }
   
   highlightNavLinks() {
-    let scrollPosition = window.scrollY + 120; // offset for nav height
+    let scrollPosition = window.scrollY + 120;
     
     this.sections.forEach(section => {
       const top = section.offsetTop;
@@ -115,17 +120,64 @@ class AppController {
       }
     });
   }
-  
-  setupGlassLighting() {
-    // Spotlight lighting effect for glass cards
+
+  setupCursorGlow() {
+    // Create cursor glow element
+    const glow = document.createElement('div');
+    glow.className = 'interactive-cursor-glow';
+    document.body.appendChild(glow);
+    
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    
     document.addEventListener('mousemove', (e) => {
-      const cards = document.querySelectorAll('.glass-card');
-      cards.forEach(card => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+    
+    // Smooth interpolation (Lerp) for elastic tracking
+    const updateGlowPosition = () => {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      
+      glow.style.transform = `translate3d(${currentX - 150}px, ${currentY - 150}px, 0)`;
+      requestAnimationFrame(updateGlowPosition);
+    };
+    
+    updateGlowPosition();
+  }
+  
+  setupGlassInteractions() {
+    // 3D Parallax Card-Tilt Engine
+    const isMobile = window.innerWidth <= 767;
+    if (isMobile) return; // Disable tilt on mobile for performance
+
+    const tiltCards = document.querySelectorAll('.glass-card-hoverable, .metric-card, .process-step');
+    
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
+        
+        // Calculate coordinates relative to card center
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Calculate tilt rotation angles (max 10 degrees)
+        const rotateX = ((centerY - y) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        
+        // Set dynamic highlight angle properties
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
       });
     });
   }
@@ -133,20 +185,52 @@ class AppController {
   setupScrollReveal() {
     const options = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -40px 0px"
     };
     
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('reveal-active');
-          observer.unobserve(entry.target); // Animate once
+          observer.unobserve(entry.target);
         }
       });
     }, options);
     
     const revealEls = document.querySelectorAll('.reveal, .reveal-fade-up, .reveal-scale-in');
     revealEls.forEach(el => observer.observe(el));
+  }
+  
+  setupCountUp() {
+    const counterElements = document.querySelectorAll('.counter-num');
+    
+    const countUp = (el) => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      let count = 0;
+      const duration = 2000; // 2 seconds
+      const stepTime = Math.max(Math.floor(duration / target), 15);
+      
+      const timer = setInterval(() => {
+        count += Math.ceil(target / (duration / stepTime));
+        if (count >= target) {
+          el.textContent = target + (el.getAttribute('data-suffix') || '');
+          clearInterval(timer);
+        } else {
+          el.textContent = count;
+        }
+      }, stepTime);
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    counterElements.forEach(el => observer.observe(el));
   }
   
   setupProcessFlow() {
@@ -156,7 +240,6 @@ class AppController {
       step.style.cursor = 'pointer';
       
       step.addEventListener('click', () => {
-        // Simple micro-interaction: Pulse active step
         step.style.transform = 'scale(1.05)';
         step.style.borderColor = 'var(--accent-gold)';
         
@@ -181,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
-        // Close mobile nav links panel if open
         const navLinks = document.getElementById('nav-links');
         const navToggle = document.getElementById('nav-toggle');
         if (navLinks && navLinks.classList.contains('open')) {
@@ -192,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
         
-        const offset = 90; // offset height of navbar
+        const offset = 90;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = targetEl.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;

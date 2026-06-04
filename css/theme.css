@@ -42,50 +42,64 @@
   --radius-button: 999px;
   --radius-floating: 32px;
 
-  /* DARK MODE - Default Values */
-  --bg-gradient: linear-gradient(180deg, #081420 0%, #0E2748 40%, #133C75 70%, #081420 100%);
-  --bg-color: #07111D;
-  --card-bg: rgba(255, 255, 255, 0.08);
+  /* GLASSMORPHISM 2.0 DARK MODE SPECIFICATIONS */
+  --bg-gradient: linear-gradient(180deg, #050d17 0%, #081a33 40%, #0d284f 75%, #050d17 100%);
+  --bg-color: #050d17;
+  
+  --card-bg: rgba(255, 255, 255, 0.07);
   --card-bg-hover: rgba(255, 255, 255, 0.12);
+  
   --text-primary: #FFFFFF;
   --text-secondary: rgba(255, 255, 255, 0.75);
   --text-tertiary: rgba(255, 255, 255, 0.5);
-  --border-color: rgba(255, 255, 255, 0.15);
-  --border-color-hover: rgba(255, 255, 255, 0.3);
-  --glass-blur: 24px;
-  --glass-blur-hover: 30px;
-  --nav-bg: rgba(255, 255, 255, 0.06);
-  --nav-blur: 30px;
-  --shadow-color: rgba(0, 0, 0, 0.25);
-  --card-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
-  --glow-color: rgba(30, 79, 255, 0.35);
   
-  --transition-speed: 0.4s;
-  --transition-timing: cubic-bezier(0.22, 1, 0.36, 1);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-color-hover: rgba(255, 255, 255, 0.25);
   
-  --hero-orb-opacity: 0.18;
+  --glass-blur: 32px;
+  --glass-blur-hover: 40px;
+  --glass-saturate: 180%;
+  
+  --nav-bg: rgba(255, 255, 255, 0.05);
+  --nav-blur: 35px;
+  
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --card-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+  --glow-color: rgba(30, 79, 255, 0.4);
+  
+  --transition-speed: 0.5s;
+  --transition-timing: cubic-bezier(0.25, 1, 0.33, 1);
+  
+  --hero-orb-opacity: 0.22;
 }
 
 /* LIGHT MODE - Class override */
 :root.light-mode {
-  --bg-gradient: linear-gradient(180deg, #F5F7FB 0%, #E8EDF5 50%, #DCE4F0 100%);
-  --bg-color: #F5F7FB;
+  --bg-gradient: linear-gradient(180deg, #F4F6FA 0%, #E6EBF5 50%, #D8E1EE 100%);
+  --bg-color: #F4F6FA;
+  
   --card-bg: rgba(255, 255, 255, 0.65);
   --card-bg-hover: rgba(255, 255, 255, 0.85);
+  
   --text-primary: #0B1F3A;
-  --text-secondary: #4D617B;
-  --text-tertiary: #6C7D93;
+  --text-secondary: #475a75;
+  --text-tertiary: #6b7c96;
+  
   --border-color: rgba(255, 255, 255, 0.85);
-  --border-color-hover: rgba(11, 31, 58, 0.25);
-  --glass-blur: 24px;
-  --glass-blur-hover: 30px;
-  --nav-bg: rgba(255, 255, 255, 0.5);
-  --nav-blur: 30px;
+  --border-color-hover: rgba(11, 31, 58, 0.3);
+  
+  --glass-blur: 32px;
+  --glass-blur-hover: 40px;
+  --glass-saturate: 180%;
+  
+  --nav-bg: rgba(255, 255, 255, 0.6);
+  --nav-blur: 35px;
+  
   --shadow-color: rgba(11, 31, 58, 0.08);
-  --card-shadow: 0px 10px 40px rgba(11, 31, 58, 0.06);
+  --card-shadow: 0px 10px 40px rgba(11, 31, 58, 0.06), inset 0px 1px 0px rgba(255, 255, 255, 0.9);
   --glow-color: rgba(30, 79, 255, 0.15);
   
-  --hero-orb-opacity: 0.12;
+  --hero-orb-opacity: 0.14;
 }
 
 /* MEDIA QUERIES FOR GLOBAL VARIABLES */
@@ -106,5 +120,7 @@
   :root {
     --container-padding: 20px;
     --section-padding-y: 72px;
+    --glass-blur: 20px;
+    --glass-blur-hover: 24px;
   }
 }
