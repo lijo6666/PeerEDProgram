@@ -17,6 +17,33 @@
 </head>
 <body>
 
+  <!-- Branded Intro Sequence Overlay -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-particles"></div>
+    <div class="intro-content">
+      <!-- Stage 1 & 2: Glowing light & Emblem -->
+      <div class="intro-emblem-container">
+        <div class="intro-glow-light"></div>
+        <div class="intro-emblem">PES</div>
+      </div>
+      
+      <!-- Stage 3: Philosophies Staggered Words -->
+      <div class="intro-philosophies">
+        <span class="p-word">Talk.</span>
+        <span class="p-word">Listen.</span>
+        <span class="p-word">Support.</span>
+        <span class="p-word">Care.</span>
+        <span class="p-word">Grow.</span>
+      </div>
+
+      <!-- Stage 4: Logos merge and subtitle -->
+      <div class="intro-final-brand">
+        <div class="intro-logo">Peer Education System</div>
+        <div class="intro-tagline">Preparing Students for Life</div>
+      </div>
+    </div>
+  </div>
+
   <!-- Floating Background Elements -->
   <div class="bg-atmosphere">
     <div class="bg-orb bg-orb-1"></div>
@@ -35,13 +62,12 @@
       
       <ul class="nav-links" id="nav-links">
         <li class="active"><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#objectives">Objectives</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#design">Programme</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="#magazine">Magazine</a></li>
-        <li><a href="#become-educator">Join Us</a></li>
+        <li><a href="#chapter-1">Who We Are</a></li>
+        <li><a href="#chapter-2">Why Peers Matter</a></li>
+        <li><a href="#chapter-3">Support Pathway</a></li>
+        <li><a href="#chapter-4">Service & Action</a></li>
+        <li><a href="#chapter-5">Stories of Growth</a></li>
+        <li><a href="#chapter-6">Join Us</a></li>
       </ul>
       
       <div class="nav-controls">
@@ -128,7 +154,9 @@
   </section>
 
   <!-- About PES Section -->
-  <section id="about" style="border-top: 1px solid var(--border-color);">
+    <!-- Chapter 1: Who We Are -->
+  <div class="chapter" id="chapter-1">
+    <section id="about" style="border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="about-grid">
         <div class="about-info reveal-fade-up">
@@ -174,66 +202,7 @@
       </div>
     </div>
   </section>
-
-  <!-- Why Peer Education Matters Section -->
-  <section id="why-matters" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-        <div class="badge"><i data-lucide="activity"></i> Peer Influence</div>
-        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Why <span>Peer Education Matters</span></h2>
-        <p class="body-text">
-          Young adults spend a significant portion of their university lives interacting with peers. These relationships profoundly shape behavior, values, and emotional adaptability.
-        </p>
-      </div>
-
-      <div class="matters-grid">
-        <div class="matters-col reveal-fade-up">
-          <div class="glass-card matters-card glass-card-hoverable">
-            <div class="matters-card-header">
-              <i data-lucide="trending-up"></i>
-              <h3 class="subheading">Peers Shape Experiences</h3>
-            </div>
-            <p class="body-text" style="margin-bottom: 20px;">
-              Peer relationships directly influence everyday student experiences and long-term habits:
-            </p>
-            <ul class="matters-list">
-              <li><i data-lucide="check-circle-2"></i> Emotional well-being & adaptiveness</li>
-              <li><i data-lucide="check-circle-2"></i> Confidence and self-identity</li>
-              <li><i data-lucide="check-circle-2"></i> Decision-making in crucial situations</li>
-              <li><i data-lucide="check-circle-2"></i> Communication and social development</li>
-              <li><i data-lucide="check-circle-2"></i> Academic adjustment and grades</li>
-              <li><i data-lucide="check-circle-2"></i> Unlocking leadership potentials</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="matters-col reveal-fade-up" style="transition-delay: 0.15s;">
-          <div class="glass-card matters-card glass-card-hoverable">
-            <div class="matters-card-header">
-              <i data-lucide="smile"></i>
-              <h3 class="subheading">Healthy Relationships Foster</h3>
-            </div>
-            <p class="body-text" style="margin-bottom: 20px;">
-              When peer environments are positive, supportive, and active, students thrive in multiple domains:
-            </p>
-            <ul class="matters-list">
-              <li><i data-lucide="check-circle-2"></i> Strong, authentic friendships and trust</li>
-              <li><i data-lucide="check-circle-2"></i> Mutual empathy and active support</li>
-              <li><i data-lucide="check-circle-2"></i> Accelerated personal growth and maturity</li>
-              <li><i data-lucide="check-circle-2"></i> Positive, ethical behavior patterns</li>
-              <li><i data-lucide="check-circle-2"></i> A genuine sense of community belonging</li>
-            </ul>
-            <p class="small-text" style="margin-top: 20px; font-style: italic;">
-              * Note: Unmanaged peer environments can also trigger stress and conflict. PES acts as a positive intervention to guide peer cultures healthily.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Objectives Section -->
-  <section id="objectives" style="border-top: 1px solid var(--border-color);">
+    <section id="objectives" style="border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
         <div class="badge"><i data-lucide="target"></i> Goals & Scope</div>
@@ -368,131 +337,266 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- Journey of PES Section (Timeline) -->
-  <section id="journey" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
+  <!-- Chapter 2: Why Peers Matter -->
+  <div class="chapter" id="chapter-2">
+    <section id="why-matters" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
     <div class="container">
-      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
-        <div class="badge"><i data-lucide="history"></i> Timeline Milestones</div>
-        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Journey of <span>PES</span></h2>
+      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+        <div class="badge"><i data-lucide="activity"></i> Peer Influence</div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Why <span>Peer Education Matters</span></h2>
         <p class="body-text">
-          Tracing our history of impact, expansion, and student transformation from 2009 to the present day.
+          Young adults spend a significant portion of their university lives interacting with peers. These relationships profoundly shape behavior, values, and emotional adaptability.
         </p>
       </div>
 
-      <div class="timeline-container">
-        <div class="timeline-line"></div>
-        <div class="timeline-progress"></div>
-        
-        <!-- Milestone 1 -->
-        <div class="timeline-item timeline-item-left">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">2009</div>
-              <div class="timeline-badge-mini"><i data-lucide="rocket" style="width:12px; height:12px;"></i> Central Campus</div>
+      <div class="matters-grid">
+        <div class="matters-col reveal-fade-up">
+          <div class="glass-card matters-card glass-card-hoverable">
+            <div class="matters-card-header">
+              <i data-lucide="trending-up"></i>
+              <h3 class="subheading">Peers Shape Experiences</h3>
             </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">PES Launch</h3>
-            <p class="small-text">Peer Education System officially launched by the Centre for Counselling & Health Services (CCHS) at the Central Campus.</p>
+            <p class="body-text" style="margin-bottom: 20px;">
+              Peer relationships directly influence everyday student experiences and long-term habits:
+            </p>
+            <ul class="matters-list">
+              <li><i data-lucide="check-circle-2"></i> Emotional well-being & adaptiveness</li>
+              <li><i data-lucide="check-circle-2"></i> Confidence and self-identity</li>
+              <li><i data-lucide="check-circle-2"></i> Decision-making in crucial situations</li>
+              <li><i data-lucide="check-circle-2"></i> Communication and social development</li>
+              <li><i data-lucide="check-circle-2"></i> Academic adjustment and grades</li>
+              <li><i data-lucide="check-circle-2"></i> Unlocking leadership potentials</li>
+            </ul>
           </div>
         </div>
-        
-        <!-- Milestone 2 -->
-        <div class="timeline-item timeline-item-right">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Growth Phase</div>
-              <div class="timeline-badge-mini"><i data-lucide="map" style="width:12px; height:12px;"></i> Multi-Campus</div>
+
+        <div class="matters-col reveal-fade-up" style="transition-delay: 0.15s;">
+          <div class="glass-card matters-card glass-card-hoverable">
+            <div class="matters-card-header">
+              <i data-lucide="smile"></i>
+              <h3 class="subheading">Healthy Relationships Foster</h3>
             </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Campus Expansion</h3>
-            <p class="small-text">Expansion of the Peer Educator network across multiple campuses of CHRIST (Deemed to be University).</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 3 -->
-        <div class="timeline-item timeline-item-left">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Awareness</div>
-              <div class="timeline-badge-mini"><i data-lucide="megaphone" style="width:12px; height:12px;"></i> 50+ Campaigns</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Student Campaigns</h3>
-            <p class="small-text">Rollout of large-scale engagement and mental health awareness campaigns targeting student assemblies.</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 4 -->
-        <div class="timeline-item timeline-item-right">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Leadership</div>
-              <div class="timeline-badge-mini"><i data-lucide="book-open" style="width:12px; height:12px;"></i> 8 Core Modules</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Facilitation Skills</h3>
-            <p class="small-text">Structuring formal training workshops for selected student volunteers in facilitation and leadership coaching.</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 5 -->
-        <div class="timeline-item timeline-item-left">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Student Support</div>
-              <div class="timeline-badge-mini"><i data-lucide="shield" style="width:12px; height:12px;"></i> 100% Secure</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Stronger Ecosystem</h3>
-            <p class="small-text">Establishment of a stronger, secure, and approachable peer-support ecosystem on campus.</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 6 -->
-        <div class="timeline-item timeline-item-right">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Publications</div>
-              <div class="timeline-badge-mini"><i data-lucide="book-open" style="width:12px; height:12px;"></i> Annual Issue</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Peer Treasure Magazine</h3>
-            <p class="small-text">Official launch and continued publication of the annual Peer Treasure e-magazine documenting stories.</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 7 -->
-        <div class="timeline-item timeline-item-left">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Impact</div>
-              <div class="timeline-badge-mini"><i data-lucide="users" style="width:12px; height:12px;"></i> 10K+ Guided</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Empowering Generations</h3>
-            <p class="small-text">Empowered thousands of graduating student leaders with transferable life and professional skills.</p>
-          </div>
-        </div>
-        
-        <!-- Milestone 8 -->
-        <div class="timeline-item timeline-item-right">
-          <div class="timeline-dot"></div>
-          <div class="glass-card timeline-card glass-card-hoverable">
-            <div class="timeline-card-header">
-              <div class="timeline-year">Future Vision</div>
-              <div class="timeline-badge-mini"><i data-lucide="sparkles" style="width:12px; height:12px;"></i> Sustainable</div>
-            </div>
-            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Inclusive Community</h3>
-            <p class="small-text">To build a healthy university environment where every student feels supported, connected, and valued.</p>
+            <p class="body-text" style="margin-bottom: 20px;">
+              When peer environments are positive, supportive, and active, students thrive in multiple domains:
+            </p>
+            <ul class="matters-list">
+              <li><i data-lucide="check-circle-2"></i> Strong, authentic friendships and trust</li>
+              <li><i data-lucide="check-circle-2"></i> Mutual empathy and active support</li>
+              <li><i data-lucide="check-circle-2"></i> Accelerated personal growth and maturity</li>
+              <li><i data-lucide="check-circle-2"></i> Positive, ethical behavior patterns</li>
+              <li><i data-lucide="check-circle-2"></i> A genuine sense of community belonging</li>
+            </ul>
+            <p class="small-text" style="margin-top: 20px; font-style: italic;">
+              * Note: Unmanaged peer environments can also trigger stress and conflict. PES acts as a positive intervention to guide peer cultures healthily.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
+    <section class="sdg-section" id="sdg-alignment" style="border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+        <div class="badge" style="background:rgba(46, 213, 115, 0.15); border-color: rgba(46, 213, 115, 0.3); color: #2ed573;">
+          <i data-lucide="globe"></i> SDG 3 Alignment
+        </div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Good Health and <span>Well-Being</span></h2>
+        <p class="body-text">
+          PES is designed in sync with the United Nations Sustainable Development Goal (SDG) 3 parameters.
+        </p>
+      </div>
 
-  <!-- Programme Design (How PES Works) -->
-  <section id="design" style="border-top: 1px solid var(--border-color);">
+      <div class="sdg-container">
+        <!-- SDG Banner Card -->
+        <div class="sdg-badge-card reveal-fade-up">
+          <div class="sdg-badge-header">
+            <span class="sdg-num">SDG 3</span>
+            <i class="sdg-icon" data-lucide="heart-pulse"></i>
+          </div>
+          <h3 class="sdg-badge-title">Good Health<br>and Well-being</h3>
+        </div>
+
+        <!-- SDG Details -->
+        <div class="sdg-details-panel reveal-fade-up" style="transition-delay: 0.15s;">
+          <div class="glass-card" style="padding: 32px; display:flex; flex-direction:column; gap:20px;">
+            <h3 style="color:var(--text-primary); font-size:22px;">Contributing to Global Well-being Goals</h3>
+            <p class="small-text">
+              Through strategic peer engagement, CHRIST (Deemed to be University) uses PES as an active vehicle to deliver on international healthcare milestones:
+            </p>
+            <div class="sdg-point">
+              <i data-lucide="check-circle" style="color: #2ed573;"></i>
+              <div>
+                <strong style="color:var(--text-primary);">Mental Health Integration:</strong>
+                <p class="small-text">Normalizing discussions on emotional concerns to remove social stigmas.</p>
+              </div>
+            </div>
+            <div class="sdg-point">
+              <i data-lucide="check-circle" style="color: #2ed573;"></i>
+              <div>
+                <strong style="color:var(--text-primary);">Resilience & Coping:</strong>
+                <p class="small-text">Training student cohorts on stress adaptation and cognitive resilience.</p>
+              </div>
+            </div>
+            <div class="sdg-point">
+              <i data-lucide="check-circle" style="color: #2ed573;"></i>
+              <div>
+                <strong style="color:var(--text-primary);">Healthy Relationships:</strong>
+                <p class="small-text">Cultivating supportive student circles built on empathy and trust.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="impact" style="border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
+        <div class="badge"><i data-lucide="bar-chart-2"></i> Statistical Success</div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Impact of <span>PES</span></h2>
+        <p class="body-text">
+          By encouraging positive student interactions, PES helps build a healthier and more supportive campus culture.
+        </p>
+      </div>
+
+      <!-- Advanced Metrics Dashboard -->
+      <div class="metrics-dashboard reveal-scale-in" style="margin-bottom: 32px;">
+        <div class="metric-card glass-card">
+          <div class="counter-num" data-target="2009" data-suffix="">0</div>
+          <p class="small-text">Year Established</p>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="counter-num" data-target="15" data-suffix="+">0</div>
+          <p class="small-text">Years of Peer Service</p>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="counter-num" data-target="500" data-suffix="+">0</div>
+          <p class="small-text">Trained Peer Leaders</p>
+        </div>
+        <div class="metric-card glass-card">
+          <div class="counter-num" data-target="10" data-suffix="K+">0</div>
+          <p class="small-text">Students Guided</p>
+        </div>
+      </div>
+
+      <!-- Premium Dashboard Layout -->
+      <div class="dashboard-split-grid reveal-fade-up" style="margin-bottom: 56px;">
+        <!-- Left: SVG Growth Chart -->
+        <div class="glass-card dashboard-card chart-container">
+          <div class="dashboard-card-header">
+            <h4>Peer Leader Network Growth</h4>
+            <span class="chart-status"><span class="pulse-dot"></span> Active Network</span>
+          </div>
+          <div class="svg-chart-wrapper">
+            <svg class="dashboard-svg-line-chart" viewBox="0 0 400 200">
+              <defs>
+                <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--secondary-blue)" stop-opacity="0.3"></stop>
+                  <stop offset="100%" stop-color="var(--secondary-blue)" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="10" y1="20" x2="390" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
+              <line x1="10" y1="70" x2="390" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
+              <line x1="10" y1="120" x2="390" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
+              <line x1="10" y1="170" x2="390" y2="170" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
+              <!-- Fill under line -->
+              <path d="M10,180 Q80,160 150,120 T290,60 T390,20 L390,180 L10,180 Z" fill="url(#chart-grad)"></path>
+              <!-- Line path -->
+              <path class="animated-chart-line" d="M10,180 Q80,160 150,120 T290,60 T390,20" fill="none" stroke="var(--secondary-blue)" stroke-width="3" stroke-linecap="round"></path>
+              <!-- Dots on line -->
+              <circle cx="10" cy="180" r="4" fill="var(--accent-gold)"></circle>
+              <circle cx="150" cy="120" r="4" fill="var(--accent-gold)"></circle>
+              <circle cx="290" cy="60" r="4" fill="var(--accent-gold)"></circle>
+              <circle cx="390" cy="20" r="4" fill="var(--accent-gold)"></circle>
+            </svg>
+          </div>
+          <div class="chart-timeline-labels">
+            <span>2009</span><span>2015</span><span>2020</span><span>2026</span>
+          </div>
+        </div>
+
+        <!-- Right: Progress Gauges -->
+        <div class="glass-card dashboard-card gauges-container">
+          <h4>System Performance Index</h4>
+          <div class="gauges-flex">
+            <!-- Gauge 1 -->
+            <div class="gauge-item">
+              <div class="circular-progress-wrapper">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                  <path class="circle-fill animate-draw-circle" stroke-dasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                  <text x="18" y="20.35" class="percentage">98%</text>
+                </svg>
+              </div>
+              <h5>Support Reach</h5>
+            </div>
+            <!-- Gauge 2 -->
+            <div class="gauge-item">
+              <div class="circular-progress-wrapper">
+                <svg viewBox="0 0 36 36" class="circular-chart">
+                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                  <path class="circle-fill animate-draw-circle" stroke-dasharray="94, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                  <text x="18" y="20.35" class="percentage">94%</text>
+                </svg>
+              </div>
+              <h5>Satisfaction</h5>
+            </div>
+          </div>
+          <div class="gauges-details-list">
+            <div class="gauge-detail-row"><span>Academic Adjustments:</span> <strong>96%</strong></div>
+            <div class="gauge-detail-row"><span>Conflict Resolutions:</span> <strong>92%</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="impact-grid">
+        <!-- Impact 1 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up">
+          <div class="impact-card-icon"><i data-lucide="smile"></i></div>
+          <h3 style="color:var(--text-primary);">Emotional Well-being</h3>
+          <p class="small-text">Helping students cope with pressure, adjustment barriers, and emotional conflicts through safe listening channels.</p>
+        </div>
+        <!-- Impact 2 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.05s;">
+          <div class="impact-card-icon"><i data-lucide="trending-up"></i></div>
+          <h3 style="color:var(--text-primary);">Leadership Development</h3>
+          <p class="small-text">Training student facilitators in conflict resolution, empathetic guidance, and campaign coordination models.</p>
+        </div>
+        <!-- Impact 3 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.1s;">
+          <div class="impact-card-icon"><i data-lucide="heart"></i></div>
+          <h3 style="color:var(--text-primary);">Community Building</h3>
+          <p class="small-text">Promoting peer integrity, mutual trust, and active inclusivity that secures student belonging across cohorts.</p>
+        </div>
+        <!-- Impact 4 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up">
+          <div class="impact-card-icon"><i data-lucide="megaphone"></i></div>
+          <h3 style="color:var(--text-primary);">Awareness Creation</h3>
+          <p class="small-text">Educating classes about mental wellness parameters, resource mapping, and counselling pathways.</p>
+        </div>
+        <!-- Impact 5 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.05s;">
+          <div class="impact-card-icon"><i data-lucide="sparkles"></i></div>
+          <h3 style="color:var(--text-primary);">Holistic Development</h3>
+          <p class="small-text">Supporting the physical, social, emotional, and cognitive growth curves of the student body.</p>
+        </div>
+        <!-- Impact 6 -->
+        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.1s;">
+          <div class="impact-card-icon"><i data-lucide="zap"></i></div>
+          <h3 style="color:var(--text-primary);">Student Empowerment</h3>
+          <p class="small-text">Enabling student leaders to take active accountability in designing a healthy, supportive university life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- Chapter 3: Support Pathway -->
+  <div class="chapter" id="chapter-3">
+    <section id="design" style="border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
         <div class="badge"><i data-lucide="git-branch"></i> Process Path</div>
@@ -634,9 +738,11 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- Role of Peer Educators Section -->
-  <section id="roles" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
+  <!-- Chapter 4: Service & Action -->
+  <div class="chapter" id="chapter-4">
+    <section id="roles" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
         <div class="badge"><i data-lucide="user-check"></i> Impact Vectors</div>
@@ -698,9 +804,7 @@
       </div>
     </div>
   </section>
-
-  <!-- Peer Educator Activities Grid (with Filters) -->
-  <section id="activities" style="border-top: 1px solid var(--border-color);">
+    <section id="activities" style="border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
         <div class="badge"><i data-lucide="activity"></i> Operations Grid</div>
@@ -957,9 +1061,131 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- Peer Treasure Magazine Section -->
-  <section id="magazine" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
+  <!-- Chapter 5: Stories of Growth -->
+  <div class="chapter" id="chapter-5">
+    <section id="journey" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
+        <div class="badge"><i data-lucide="history"></i> Timeline Milestones</div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Journey of <span>PES</span></h2>
+        <p class="body-text">
+          Tracing our history of impact, expansion, and student transformation from 2009 to the present day.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-progress"></div>
+        
+        <!-- Milestone 1 -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">2009</div>
+              <div class="timeline-badge-mini"><i data-lucide="rocket" style="width:12px; height:12px;"></i> Central Campus</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">PES Launch</h3>
+            <p class="small-text">Peer Education System officially launched by the Centre for Counselling & Health Services (CCHS) at the Central Campus.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 2 -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Growth Phase</div>
+              <div class="timeline-badge-mini"><i data-lucide="map" style="width:12px; height:12px;"></i> Multi-Campus</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Campus Expansion</h3>
+            <p class="small-text">Expansion of the Peer Educator network across multiple campuses of CHRIST (Deemed to be University).</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 3 -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Awareness</div>
+              <div class="timeline-badge-mini"><i data-lucide="megaphone" style="width:12px; height:12px;"></i> 50+ Campaigns</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Student Campaigns</h3>
+            <p class="small-text">Rollout of large-scale engagement and mental health awareness campaigns targeting student assemblies.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 4 -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Leadership</div>
+              <div class="timeline-badge-mini"><i data-lucide="book-open" style="width:12px; height:12px;"></i> 8 Core Modules</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Facilitation Skills</h3>
+            <p class="small-text">Structuring formal training workshops for selected student volunteers in facilitation and leadership coaching.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 5 -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Student Support</div>
+              <div class="timeline-badge-mini"><i data-lucide="shield" style="width:12px; height:12px;"></i> 100% Secure</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Stronger Ecosystem</h3>
+            <p class="small-text">Establishment of a stronger, secure, and approachable peer-support ecosystem on campus.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 6 -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Publications</div>
+              <div class="timeline-badge-mini"><i data-lucide="book-open" style="width:12px; height:12px;"></i> Annual Issue</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Peer Treasure Magazine</h3>
+            <p class="small-text">Official launch and continued publication of the annual Peer Treasure e-magazine documenting stories.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 7 -->
+        <div class="timeline-item timeline-item-left">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Impact</div>
+              <div class="timeline-badge-mini"><i data-lucide="users" style="width:12px; height:12px;"></i> 10K+ Guided</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Empowering Generations</h3>
+            <p class="small-text">Empowered thousands of graduating student leaders with transferable life and professional skills.</p>
+          </div>
+        </div>
+        
+        <!-- Milestone 8 -->
+        <div class="timeline-item timeline-item-right">
+          <div class="timeline-dot"></div>
+          <div class="glass-card timeline-card glass-card-hoverable">
+            <div class="timeline-card-header">
+              <div class="timeline-year">Future Vision</div>
+              <div class="timeline-badge-mini"><i data-lucide="sparkles" style="width:12px; height:12px;"></i> Sustainable</div>
+            </div>
+            <h3 style="font-size:18px; margin-bottom:8px; color:var(--text-primary);">Inclusive Community</h3>
+            <p class="small-text">To build a healthy university environment where every student feels supported, connected, and valued.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section id="magazine" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto;">
         <div class="badge"><i data-lucide="book-open"></i> Publications & Stories</div>
@@ -1030,151 +1256,238 @@
     </div>
   </section>
 
-  <!-- Impact Section -->
-  <section id="impact" style="border-top: 1px solid var(--border-color);">
+  <!-- Chapter 5: Digital Stall Experience -->
+  <section id="digital-stall" class="digital-stall-section" style="border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
-        <div class="badge"><i data-lucide="bar-chart-2"></i> Statistical Success</div>
-        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Impact of <span>PES</span></h2>
+        <div class="badge"><i data-lucide="help-circle"></i> Interactive Experience</div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Digital <span>Stall Experience</span></h2>
         <p class="body-text">
-          By encouraging positive student interactions, PES helps build a healthier and more supportive campus culture.
+          Step into our interactive digital kiosk. Hover or click on the core pillars of Peer Education below to reveal the personal stories and journeys of students in our community.
         </p>
       </div>
 
-      <!-- Advanced Metrics Dashboard -->
-      <div class="metrics-dashboard reveal-scale-in" style="margin-bottom: 32px;">
-        <div class="metric-card glass-card">
-          <div class="counter-num" data-target="2009" data-suffix="">0</div>
-          <p class="small-text">Year Established</p>
-        </div>
-        <div class="metric-card glass-card">
-          <div class="counter-num" data-target="15" data-suffix="+">0</div>
-          <p class="small-text">Years of Peer Service</p>
-        </div>
-        <div class="metric-card glass-card">
-          <div class="counter-num" data-target="500" data-suffix="+">0</div>
-          <p class="small-text">Trained Peer Leaders</p>
-        </div>
-        <div class="metric-card glass-card">
-          <div class="counter-num" data-target="10" data-suffix="K+">0</div>
-          <p class="small-text">Students Guided</p>
-        </div>
-      </div>
-
-      <!-- Premium Dashboard Layout -->
-      <div class="dashboard-split-grid reveal-fade-up" style="margin-bottom: 56px;">
-        <!-- Left: SVG Growth Chart -->
-        <div class="glass-card dashboard-card chart-container">
-          <div class="dashboard-card-header">
-            <h4>Peer Leader Network Growth</h4>
-            <span class="chart-status"><span class="pulse-dot"></span> Active Network</span>
-          </div>
-          <div class="svg-chart-wrapper">
-            <svg class="dashboard-svg-line-chart" viewBox="0 0 400 200">
-              <defs>
-                <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--secondary-blue)" stop-opacity="0.3"></stop>
-                  <stop offset="100%" stop-color="var(--secondary-blue)" stop-opacity="0"></stop>
-                </linearGradient>
-              </defs>
-              <!-- Grid lines -->
-              <line x1="10" y1="20" x2="390" y2="20" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
-              <line x1="10" y1="70" x2="390" y2="70" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
-              <line x1="10" y1="120" x2="390" y2="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
-              <line x1="10" y1="170" x2="390" y2="170" stroke="rgba(255,255,255,0.05)" stroke-width="1"></line>
-              <!-- Fill under line -->
-              <path d="M10,180 Q80,160 150,120 T290,60 T390,20 L390,180 L10,180 Z" fill="url(#chart-grad)"></path>
-              <!-- Line path -->
-              <path class="animated-chart-line" d="M10,180 Q80,160 150,120 T290,60 T390,20" fill="none" stroke="var(--secondary-blue)" stroke-width="3" stroke-linecap="round"></path>
-              <!-- Dots on line -->
-              <circle cx="10" cy="180" r="4" fill="var(--accent-gold)"></circle>
-              <circle cx="150" cy="120" r="4" fill="var(--accent-gold)"></circle>
-              <circle cx="290" cy="60" r="4" fill="var(--accent-gold)"></circle>
-              <circle cx="390" cy="20" r="4" fill="var(--accent-gold)"></circle>
-            </svg>
-          </div>
-          <div class="chart-timeline-labels">
-            <span>2009</span><span>2015</span><span>2020</span><span>2026</span>
+      <div class="stall-grid reveal-scale-in">
+        <!-- Card 1: Talk -->
+        <div class="glass-card stall-panel" data-pillar="talk">
+          <div class="stall-badge">Pillar 01</div>
+          <div class="stall-icon-wrapper"><i data-lucide="message-square"></i></div>
+          <h3>Talk</h3>
+          <p class="stall-desc">Breaking silence and opening dialogue.</p>
+          <div class="stall-story-content">
+            <p class="story-text">"It started with a simple hello. When I felt overwhelmed by college life, having a peer educator initiate a conversation made me feel seen. We just talked, no judgment, just warmth."</p>
+            <span class="story-author">- Shreya K., Junior</span>
           </div>
         </div>
-
-        <!-- Right: Progress Gauges -->
-        <div class="glass-card dashboard-card gauges-container">
-          <h4>System Performance Index</h4>
-          <div class="gauges-flex">
-            <!-- Gauge 1 -->
-            <div class="gauge-item">
-              <div class="circular-progress-wrapper">
-                <svg viewBox="0 0 36 36" class="circular-chart">
-                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                  <path class="circle-fill animate-draw-circle" stroke-dasharray="98, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                  <text x="18" y="20.35" class="percentage">98%</text>
-                </svg>
-              </div>
-              <h5>Support Reach</h5>
-            </div>
-            <!-- Gauge 2 -->
-            <div class="gauge-item">
-              <div class="circular-progress-wrapper">
-                <svg viewBox="0 0 36 36" class="circular-chart">
-                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                  <path class="circle-fill animate-draw-circle" stroke-dasharray="94, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                  <text x="18" y="20.35" class="percentage">94%</text>
-                </svg>
-              </div>
-              <h5>Satisfaction</h5>
-            </div>
-          </div>
-          <div class="gauges-details-list">
-            <div class="gauge-detail-row"><span>Academic Adjustments:</span> <strong>96%</strong></div>
-            <div class="gauge-detail-row"><span>Conflict Resolutions:</span> <strong>92%</strong></div>
+        <!-- Card 2: Listen -->
+        <div class="glass-card stall-panel" data-pillar="listen">
+          <div class="stall-badge">Pillar 02</div>
+          <div class="stall-icon-wrapper"><i data-lucide="volume-2"></i></div>
+          <h3>Listen</h3>
+          <p class="stall-desc">Patient, empathetic, active listening.</p>
+          <div class="stall-story-content">
+            <p class="story-text">"Listening isn't just about hearing words; it's about hearing silence. My peer leader noticed I was quiet for days. They sat with me, listening patiently while I poured my heart out about my academic stress."</p>
+            <span class="story-author">- Rahul M., Sophomore</span>
           </div>
         </div>
-      </div>
-
-      <div class="impact-grid">
-        <!-- Impact 1 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up">
-          <div class="impact-card-icon"><i data-lucide="smile"></i></div>
-          <h3 style="color:var(--text-primary);">Emotional Well-being</h3>
-          <p class="small-text">Helping students cope with pressure, adjustment barriers, and emotional conflicts through safe listening channels.</p>
+        <!-- Card 3: Support -->
+        <div class="glass-card stall-panel" data-pillar="support">
+          <div class="stall-badge">Pillar 03</div>
+          <div class="stall-icon-wrapper"><i data-lucide="heart-handshake"></i></div>
+          <h3>Support</h3>
+          <p class="stall-desc">Empowering student networks.</p>
+          <div class="stall-story-content">
+            <p class="story-text">"I was struggling to adapt to the new campus environment. The PES support network connected me with study groups and wellness activities, transforming my anxiety into confidence."</p>
+            <span class="story-author">- Aditi P., Senior</span>
+          </div>
         </div>
-        <!-- Impact 2 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.05s;">
-          <div class="impact-card-icon"><i data-lucide="trending-up"></i></div>
-          <h3 style="color:var(--text-primary);">Leadership Development</h3>
-          <p class="small-text">Training student facilitators in conflict resolution, empathetic guidance, and campaign coordination models.</p>
+        <!-- Card 4: Care -->
+        <div class="glass-card stall-panel" data-pillar="care">
+          <div class="stall-badge">Pillar 04</div>
+          <div class="stall-icon-wrapper"><i data-lucide="heart"></i></div>
+          <h3>Care</h3>
+          <p class="stall-desc">Prioritizing emotional safety & well-being.</p>
+          <div class="stall-story-content">
+            <p class="story-text">"During exams, the wellness stalls distributed encouragement cards and stress-relief resources. Knowing the CCHS and PES community genuinely cares made a massive difference to my mental well-being."</p>
+            <span class="story-author">- Rohan D., Freshman</span>
+          </div>
         </div>
-        <!-- Impact 3 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.1s;">
-          <div class="impact-card-icon"><i data-lucide="heart"></i></div>
-          <h3 style="color:var(--text-primary);">Community Building</h3>
-          <p class="small-text">Promoting peer integrity, mutual trust, and active inclusivity that secures student belonging across cohorts.</p>
-        </div>
-        <!-- Impact 4 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up">
-          <div class="impact-card-icon"><i data-lucide="megaphone"></i></div>
-          <h3 style="color:var(--text-primary);">Awareness Creation</h3>
-          <p class="small-text">Educating classes about mental wellness parameters, resource mapping, and counselling pathways.</p>
-        </div>
-        <!-- Impact 5 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.05s;">
-          <div class="impact-card-icon"><i data-lucide="sparkles"></i></div>
-          <h3 style="color:var(--text-primary);">Holistic Development</h3>
-          <p class="small-text">Supporting the physical, social, emotional, and cognitive growth curves of the student body.</p>
-        </div>
-        <!-- Impact 6 -->
-        <div class="glass-card impact-card glass-card-hoverable reveal-fade-up" style="transition-delay: 0.1s;">
-          <div class="impact-card-icon"><i data-lucide="zap"></i></div>
-          <h3 style="color:var(--text-primary);">Student Empowerment</h3>
-          <p class="small-text">Enabling student leaders to take active accountability in designing a healthy, supportive university life.</p>
+        <!-- Card 5: Grow -->
+        <div class="glass-card stall-panel" data-pillar="grow">
+          <div class="stall-badge">Pillar 05</div>
+          <div class="stall-icon-wrapper"><i data-lucide="trending-up"></i></div>
+          <h3>Grow</h3>
+          <p class="stall-desc">Fostering resilience & self-development.</p>
+          <div class="stall-story-content">
+            <p class="story-text">"Becoming a Peer Educator myself was the ultimate growth. I learned empathy, active listening, and event coordination, which prepared me for leadership roles in life."</p>
+            <span class="story-author">- Priya S., Alumna</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Campus Visibility Section -->
-  <section id="visibility" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
+  </div>
+
+  <!-- Chapter 6: Join Us -->
+  <div class="chapter" id="chapter-6">
+    <section id="become-educator" style="background: rgba(30, 79, 255, 0.03); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="join-us-split-grid">
+        <!-- Left: Aspirational Headings and CTA -->
+        <div class="join-left reveal-fade-up">
+          <div class="badge"><i data-lucide="sparkles"></i> Recruitment Open</div>
+          <h2 class="section-heading" style="font-family: 'Outfit', sans-serif; margin-top: 16px;">Lead. Support. <span>Inspire.</span></h2>
+          <p class="body-text" style="margin-bottom: 24px;">
+            Join a premium network of student leaders dedicated to making a positive difference on campus. Support your peers while building core capabilities for your life ahead.
+          </p>
+          
+          <ul class="benefits-bullet-list" style="list-style:none; display:flex; flex-direction:column; gap:16px;">
+            <li style="display:flex; gap:16px; align-items:flex-start;">
+              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(212,169,74,0.15); display:flex; align-items:center; justify-content:center; color:var(--accent-gold); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
+              <div class="bullet-text">
+                <strong style="color:var(--text-primary);">Empathetic Leadership:</strong> Learn to lead groups with deep empathy and active listening.
+              </div>
+            </li>
+            <li style="display:flex; gap:16px; align-items:flex-start;">
+              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(30,79,255,0.15); display:flex; align-items:center; justify-content:center; color:var(--secondary-blue); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
+              <div class="bullet-text">
+                <strong style="color:var(--text-primary);">Crisis Counseling Bridging:</strong> Acquire key skills to guide peers to professional resources.
+              </div>
+            </li>
+            <li style="display:flex; gap:16px; align-items:flex-start;">
+              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(212,169,74,0.15); display:flex; align-items:center; justify-content:center; color:var(--accent-gold); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
+              <div class="bullet-text">
+                <strong style="color:var(--text-primary);">University Recognition:</strong> Earn official appreciation letters and certificates.
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 32px;">
+            <button class="btn btn-primary apply-trigger-btn">Apply Now <i data-lucide="edit-3" style="width:18px; height:18px;"></i></button>
+          </div>
+        </div>
+
+        <!-- Right: Layered Floating Benefit Showcase Cards -->
+        <div class="join-right reveal-scale-in">
+          <div class="floating-cards-showcase">
+            <div class="floating-bg-glow"></div>
+            
+            <div class="glass-card floating-showcase-card card-1 glass-card-hoverable">
+              <i data-lucide="users" style="color: var(--accent-gold); margin-bottom:12px;"></i>
+              <h4>Empathetic Peer Network</h4>
+              <p class="small-text">Connect with and support hundreds of students across campus blocks.</p>
+            </div>
+            
+            <div class="glass-card floating-showcase-card card-2 glass-card-hoverable">
+              <i data-lucide="award" style="color: var(--secondary-blue); margin-bottom:12px;"></i>
+              <h4>Leadership Capacities</h4>
+              <p class="small-text">Coordinate large events, newsletter releases, and student campaigns.</p>
+            </div>
+            
+            <div class="glass-card floating-showcase-card card-3 glass-card-hoverable">
+              <i data-lucide="heart" style="color: var(--accent-gold); margin-bottom:12px;"></i>
+              <h4>Life-Long Growth</h4>
+              <p class="small-text">Build life-skills that prepare you for leadership roles beyond graduation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 6: Anonymous Note Wall -->
+  <section id="note-wall" class="note-wall-section" style="border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
+        <div class="badge"><i data-lucide="message-square"></i> Community Support</div>
+        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">You Are <span>Not Alone</span></h2>
+        <p class="body-text">
+          A virtual glass board of anonymous notes left by students at CHRIST. Read their words of encouragement, hope, and resilience, or see how peer support makes a difference.
+        </p>
+      </div>
+
+      <div class="note-wall-container reveal-scale-in">
+        <div class="note-board-grid">
+          <!-- Sticky Note 1 -->
+          <div class="anonymous-note note-color-1">
+            <div class="note-pin"></div>
+            <p class="note-content">"To anyone struggling: it's okay to take a break. Your mental health is more important than any grade. CCHS is there for you."</p>
+            <div class="note-footer">
+              <span class="note-tag">#Hope</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+          <!-- Sticky Note 2 -->
+          <div class="anonymous-note note-color-2">
+            <div class="note-pin"></div>
+            <p class="note-content">"I failed a class in my first semester and felt like a complete failure. Today I'm graduating. There is light at the end of the tunnel!"</p>
+            <div class="note-footer">
+              <span class="note-tag">#Resilience</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+          <!-- Sticky Note 3 -->
+          <div class="anonymous-note note-color-3">
+            <div class="note-pin"></div>
+            <p class="note-content">"You don't have to carry the weight of the world by yourself. Peer Educators are always here to listen. Speak up, you are not alone."</p>
+            <div class="note-footer">
+              <span class="note-tag">#Support</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+          <!-- Sticky Note 4 -->
+          <div class="anonymous-note note-color-4">
+            <div class="note-pin"></div>
+            <p class="note-content">"The best thing I did at CHRIST was walk into CCHS and ask for help. It changed the trajectory of my university life."</p>
+            <div class="note-footer">
+              <span class="note-tag">#Gratitude</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+          <!-- Sticky Note 5 -->
+          <div class="anonymous-note note-color-5">
+            <div class="note-pin"></div>
+            <p class="note-content">"Your worth is not defined by external expectations. Be kind to yourself. You are doing amazing!"</p>
+            <div class="note-footer">
+              <span class="note-tag">#SelfLove</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+          <!-- Sticky Note 6 -->
+          <div class="anonymous-note note-color-6">
+            <div class="note-pin"></div>
+            <p class="note-content">"A tiny conversation can save a life. Talk to a Peer Educator today, they are friendly, warm, and ready to help."</p>
+            <div class="note-footer">
+              <span class="note-tag">#Connection</span>
+              <span class="note-author">Anonymous</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive Input (Mockup Note Creator) -->
+        <div class="note-creator-wrapper glass-card">
+          <h4>Leave a Word of Support (Anonymous)</h4>
+          <div class="note-creator-form">
+            <textarea id="new-note-text" placeholder="Write something encouraging for your peers..." maxlength="150" aria-label="Support note text"></textarea>
+            <div class="note-creator-actions">
+              <div class="color-select">
+                <span class="color-dot dot-1 active" data-color="1"></span>
+                <span class="color-dot dot-2" data-color="2"></span>
+                <span class="color-dot dot-3" data-color="3"></span>
+                <span class="color-dot dot-4" data-color="4"></span>
+                <span class="color-dot dot-5" data-color="5"></span>
+                <span class="color-dot dot-6" data-color="6"></span>
+              </div>
+              <button id="post-note-btn" class="btn btn-secondary btn-sm">Post Note <i data-lucide="send" style="width:14px; height:14px; margin-left:4px;"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="visibility" style="background: rgba(30, 79, 255, 0.02); border-top: 1px solid var(--border-color);">
     <div class="container">
       <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
         <div class="badge"><i data-lucide="eye"></i> Campus Presence</div>
@@ -1245,129 +1558,9 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SDG 3 Alignment Section -->
-  <section class="sdg-section" id="sdg-alignment" style="border-top: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="reveal-fade-up" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
-        <div class="badge" style="background:rgba(46, 213, 115, 0.15); border-color: rgba(46, 213, 115, 0.3); color: #2ed573;">
-          <i data-lucide="globe"></i> SDG 3 Alignment
-        </div>
-        <h2 class="section-heading" style="font-family: 'Outfit', sans-serif;">Good Health and <span>Well-Being</span></h2>
-        <p class="body-text">
-          PES is designed in sync with the United Nations Sustainable Development Goal (SDG) 3 parameters.
-        </p>
-      </div>
 
-      <div class="sdg-container">
-        <!-- SDG Banner Card -->
-        <div class="sdg-badge-card reveal-fade-up">
-          <div class="sdg-badge-header">
-            <span class="sdg-num">SDG 3</span>
-            <i class="sdg-icon" data-lucide="heart-pulse"></i>
-          </div>
-          <h3 class="sdg-badge-title">Good Health<br>and Well-being</h3>
-        </div>
-
-        <!-- SDG Details -->
-        <div class="sdg-details-panel reveal-fade-up" style="transition-delay: 0.15s;">
-          <div class="glass-card" style="padding: 32px; display:flex; flex-direction:column; gap:20px;">
-            <h3 style="color:var(--text-primary); font-size:22px;">Contributing to Global Well-being Goals</h3>
-            <p class="small-text">
-              Through strategic peer engagement, CHRIST (Deemed to be University) uses PES as an active vehicle to deliver on international healthcare milestones:
-            </p>
-            <div class="sdg-point">
-              <i data-lucide="check-circle" style="color: #2ed573;"></i>
-              <div>
-                <strong style="color:var(--text-primary);">Mental Health Integration:</strong>
-                <p class="small-text">Normalizing discussions on emotional concerns to remove social stigmas.</p>
-              </div>
-            </div>
-            <div class="sdg-point">
-              <i data-lucide="check-circle" style="color: #2ed573;"></i>
-              <div>
-                <strong style="color:var(--text-primary);">Resilience & Coping:</strong>
-                <p class="small-text">Training student cohorts on stress adaptation and cognitive resilience.</p>
-              </div>
-            </div>
-            <div class="sdg-point">
-              <i data-lucide="check-circle" style="color: #2ed573;"></i>
-              <div>
-                <strong style="color:var(--text-primary);">Healthy Relationships:</strong>
-                <p class="small-text">Cultivating supportive student circles built on empathy and trust.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Become a Peer Educator Section -->
-  <section id="become-educator" style="background: rgba(30, 79, 255, 0.03); border-top: 1px solid var(--border-color);">
-    <div class="container">
-      <div class="join-us-split-grid">
-        <!-- Left: Aspirational Headings and CTA -->
-        <div class="join-left reveal-fade-up">
-          <div class="badge"><i data-lucide="sparkles"></i> Recruitment Open</div>
-          <h2 class="section-heading" style="font-family: 'Outfit', sans-serif; margin-top: 16px;">Lead. Support. <span>Inspire.</span></h2>
-          <p class="body-text" style="margin-bottom: 24px;">
-            Join a premium network of student leaders dedicated to making a positive difference on campus. Support your peers while building core capabilities for your life ahead.
-          </p>
-          
-          <ul class="benefits-bullet-list" style="list-style:none; display:flex; flex-direction:column; gap:16px;">
-            <li style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(212,169,74,0.15); display:flex; align-items:center; justify-content:center; color:var(--accent-gold); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
-              <div class="bullet-text">
-                <strong style="color:var(--text-primary);">Empathetic Leadership:</strong> Learn to lead groups with deep empathy and active listening.
-              </div>
-            </li>
-            <li style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(30,79,255,0.15); display:flex; align-items:center; justify-content:center; color:var(--secondary-blue); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
-              <div class="bullet-text">
-                <strong style="color:var(--text-primary);">Crisis Counseling Bridging:</strong> Acquire key skills to guide peers to professional resources.
-              </div>
-            </li>
-            <li style="display:flex; gap:16px; align-items:flex-start;">
-              <div class="bullet-icon" style="width:24px; height:24px; border-radius:50%; background:rgba(212,169,74,0.15); display:flex; align-items:center; justify-content:center; color:var(--accent-gold); flex-shrink:0; margin-top:4px;"><i data-lucide="check" style="width:14px; height:14px;"></i></div>
-              <div class="bullet-text">
-                <strong style="color:var(--text-primary);">University Recognition:</strong> Earn official appreciation letters and certificates.
-              </div>
-            </li>
-          </ul>
-
-          <div style="margin-top: 32px;">
-            <button class="btn btn-primary apply-trigger-btn">Apply Now <i data-lucide="edit-3" style="width:18px; height:18px;"></i></button>
-          </div>
-        </div>
-
-        <!-- Right: Layered Floating Benefit Showcase Cards -->
-        <div class="join-right reveal-scale-in">
-          <div class="floating-cards-showcase">
-            <div class="floating-bg-glow"></div>
-            
-            <div class="glass-card floating-showcase-card card-1 glass-card-hoverable">
-              <i data-lucide="users" style="color: var(--accent-gold); margin-bottom:12px;"></i>
-              <h4>Empathetic Peer Network</h4>
-              <p class="small-text">Connect with and support hundreds of students across campus blocks.</p>
-            </div>
-            
-            <div class="glass-card floating-showcase-card card-2 glass-card-hoverable">
-              <i data-lucide="award" style="color: var(--secondary-blue); margin-bottom:12px;"></i>
-              <h4>Leadership Capacities</h4>
-              <p class="small-text">Coordinate large events, newsletter releases, and student campaigns.</p>
-            </div>
-            
-            <div class="glass-card floating-showcase-card card-3 glass-card-hoverable">
-              <i data-lucide="heart" style="color: var(--accent-gold); margin-bottom:12px;"></i>
-              <h4>Life-Long Growth</h4>
-              <p class="small-text">Build life-skills that prepare you for leadership roles beyond graduation.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer Section -->
   <footer class="footer">

@@ -42,6 +42,15 @@ class AppController {
     
     // Magnetic Button Interactions
     this.setupMagneticButtons();
+
+    // Branded Intro Sequence
+    this.setupIntroOverlay();
+    
+    // Digital Stall Experience
+    this.setupDigitalStall();
+    
+    // Anonymous Note Wall
+    this.setupAnonymousNotes();
     
     // Load lucide icons
     if (typeof lucide !== 'undefined') {
@@ -322,6 +331,157 @@ class AppController {
         btn.style.transform = 'translate3d(0, 0, 0) scale(1)';
         btn.style.boxShadow = '';
       });
+    });
+  }
+
+  setupIntroOverlay() {
+    const overlay = document.getElementById('intro-overlay');
+    if (!overlay) return;
+    
+    // Add scroll lock class to body
+    document.body.classList.add('intro-active');
+    
+    // Stage 3: Philosophies Staggered Words Reveal
+    const words = document.querySelectorAll('.intro-philosophies .p-word');
+    words.forEach((word, index) => {
+      setTimeout(() => {
+        word.classList.add('reveal');
+        // Add accent grow highlight class
+        word.classList.add('active-grow');
+        
+        // Remove grow highlight from previous word
+        if (index > 0) {
+          words[index - 1].classList.remove('active-grow');
+        }
+      }, 500 + index * 300); // Stagger every 300ms starting at 500ms
+    });
+    
+    // Stage 4: Logos merge and final tagline reveal
+    const finalRevealTime = 500 + words.length * 300 + 400;
+    setTimeout(() => {
+      // Remove grow highlight from last word
+      if (words.length > 0) {
+        words[words.length - 1].classList.remove('active-grow');
+      }
+      
+      // Hide philosophies and emblem, show final brand
+      const emblemContainer = document.querySelector('.intro-emblem-container');
+      const philosophiesContainer = document.querySelector('.intro-philosophies');
+      const finalBrand = document.querySelector('.intro-final-brand');
+      
+      if (emblemContainer) emblemContainer.style.opacity = '0';
+      if (philosophiesContainer) philosophiesContainer.style.opacity = '0';
+      
+      setTimeout(() => {
+        if (emblemContainer) emblemContainer.style.display = 'none';
+        if (philosophiesContainer) philosophiesContainer.style.display = 'none';
+        if (finalBrand) finalBrand.classList.add('reveal');
+      }, 400);
+      
+    }, finalRevealTime);
+    
+    // Stage 5: Fade-out intro overlay entirely
+    const fadeOutTime = finalRevealTime + 1100;
+    setTimeout(() => {
+      overlay.classList.add('fade-out');
+      document.body.classList.remove('intro-active');
+    }, fadeOutTime);
+  }
+
+  setupDigitalStall() {
+    const panels = document.querySelectorAll('.stall-panel');
+    if (!panels.length) return;
+    
+    panels.forEach(panel => {
+      // 3D Parallax Tilt coordinates for Stall panels
+      panel.addEventListener('mousemove', (e) => {
+        const rect = panel.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        panel.style.setProperty('--mouse-x', `${x}px`);
+        panel.style.setProperty('--mouse-y', `${y}px`);
+      });
+      
+      // Toggle active status on click
+      panel.addEventListener('click', () => {
+        const isActive = panel.classList.contains('active');
+        
+        // Remove active class from all panels
+        panels.forEach(p => p.classList.remove('active'));
+        
+        // Toggle this panel
+        if (!isActive) {
+          panel.classList.add('active');
+        }
+      });
+    });
+  }
+
+  setupAnonymousNotes() {
+    const board = document.querySelector('.note-board-grid');
+    const textarea = document.getElementById('new-note-text');
+    const postBtn = document.getElementById('post-note-btn');
+    const dots = document.querySelectorAll('.color-select .color-dot');
+    
+    if (!board || !postBtn || !textarea) return;
+    
+    let selectedColorIndex = 1; // default to color 1
+    
+    // Color selector handler
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+        selectedColorIndex = parseInt(dot.getAttribute('data-color'), 10);
+      });
+    });
+    
+    // Post Note click handler
+    postBtn.addEventListener('click', () => {
+      const text = textarea.value.trim();
+      if (!text) {
+        alert('Please enter some text for your note.');
+        return;
+      }
+      
+      // Create new note HTML element
+      const note = document.createElement('div');
+      note.className = `anonymous-note note-color-${selectedColorIndex} reveal-scale-in`;
+      
+      // Calculate random rotation between -3 and +3 degrees
+      const rotation = (Math.random() * 6 - 3).toFixed(1);
+      const translateVal = (Math.random() * 6 - 3).toFixed(0);
+      note.style.transform = `rotate(${rotation}deg) translateY(${translateVal}px)`;
+      
+      // Select pin color based on note count or randomly
+      const pinColors = ['#ff6b6b', '#5c7cfa', '#fcc419', '#12b886', '#e03131', '#1971c2'];
+      const randomPinColor = pinColors[Math.floor(Math.random() * pinColors.length)];
+      
+      note.innerHTML = `
+        <div class="note-pin" style="background: radial-gradient(circle at 30% 30%, ${randomPinColor}, rgba(0,0,0,0.5))"></div>
+        <p class="note-content">"${text}"</p>
+        <div class="note-footer">
+          <span class="note-tag">#Support</span>
+          <span class="note-author">Anonymous</span>
+        </div>
+      `;
+      
+      // Prepend to board
+      board.insertBefore(note, board.firstChild);
+      
+      // Add animate class after insertion
+      setTimeout(() => {
+        note.classList.add('reveal-active');
+      }, 50);
+      
+      // Clear textarea
+      textarea.value = '';
+      
+      // Re-trigger lucide icons if applicable
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
     });
   }
 }
